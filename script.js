@@ -1,14 +1,19 @@
+// Get container element 
+const container = document.getElementById("grid-container");
+
 // Function to generate grid
 function genGrid(x) {
-    var container = document.getElementById("grid-container");
-    for (i=0; i < x; i++){
-        var row = document.createElement("div");
-        row.className("grid-row");
-        for (j=0; j < x; j++){
-            var square = document.createElement("div");
-            square.className("grid-square");
-            row.appendChild("square");
+    for(i = 0; i < x; i++){
+        for(j = 0; j < x; j++) {
+            var gridSquare = document.createElement("div"); 
+            gridSquare.className = "grid-square";
+            container.appendChild(gridSquare);
+            console.log("new square");
         }
-        container.appendChild("row");
     }
+    var newRow = document.createElement("br"); 
+    container.appendChild(newRow);
 }
+   
+
+genGrid(16);
