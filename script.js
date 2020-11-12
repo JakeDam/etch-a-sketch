@@ -21,8 +21,11 @@ function colorChangeEventListener(color) {
     var nodeList = document.querySelectorAll(".grid-square");
     for(var i = 0, len = nodeList.length; i < len; i++) {
         nodeList[i].addEventListener(
-            "mouseover", function() {
-                this.style.backgroundColor = color;
+            "mouseover", function(e) {
+                if(e.buttons == 1 || e.buttons == 3) {
+                    this.style.backgroundColor = color;
+                }
+                
             });
     }
 }
@@ -35,7 +38,7 @@ function clearGrid() {
     }
 }
 
-genGrid(50);
+genGrid(100);
 
 // Change grid-square color on mouseover
 colorChangeEventListener("black");

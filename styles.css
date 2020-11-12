@@ -5,18 +5,23 @@ html, body {
 
 #grid-container {
     display: flex;
-    height: 1000px;
-    width: 1000px;
+    flex-direction: column;
+    width: 750px;
+    height: 500px;
 }
 
-#grid-row {
+#grid-container > div {
+    flex: 1;
+}
 
+.grid-row {
+    display: flex;
+}
+
+.grid-row > div {
+    flex: 1;
 }
 
 .grid-square {
-    display: flex;
-    height: 10px;
-    width: 10px;
-    background-color: white;
     border: 1px solid black;
 }
