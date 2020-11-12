@@ -10,13 +10,13 @@ html, body {
 }
 
 #grid-row {
-    display: flex;
+
 }
 
 .grid-square {
     display: flex;
     height: 10px;
     width: 10px;
-    background-color: red;
-    border: solid black 1px;
+    background-color: white;
+    border: 1px solid black;
 }
