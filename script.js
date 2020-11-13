@@ -38,7 +38,12 @@ function clearGrid() {
     }
 }
 
-genGrid(100);
+// Updates display to match grid slider value 
+function updateValue(value) {
+    document.getElementById("slider-display").textContent = value + "x" + value;
+}
+
+genGrid(16);
 
 // Change grid-square color on mouseover
 colorChangeEventListener("black");
