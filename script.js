@@ -34,7 +34,7 @@ function colorChangeEventListener(color) {
 function clearGrid() {
     var nodeList = document.querySelectorAll(".grid-square");
     for(var i = 0, len = nodeList.length; i < len; i++) {
-        nodeList[i].style.backgroundColor = "white";
+        nodeList[i].remove();
     }
 }
 
