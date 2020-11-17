@@ -32,9 +32,8 @@ function colorChangeEventListener(color) {
 
 // Clears grid 
 function clearGrid() {
-    var nodeList = document.querySelectorAll(".grid-square");
-    for(var i = 0, len = nodeList.length; i < len; i++) {
-        nodeList[i].remove();
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
     }
 }
 
