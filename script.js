@@ -35,6 +35,8 @@ function clearGrid() {
     while (container.firstChild) {
         container.removeChild(container.firstChild);
     }
+    var slideValue = document.getElementById("grid-slider").value;
+    genGrid(slideValue);
 }
 
 // Updates display to match grid slider value 
