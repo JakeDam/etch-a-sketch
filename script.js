@@ -41,10 +41,13 @@ function clearGrid() {
 
 // Updates display to match grid slider value 
 function updateValue(value) {
-    document.getElementById("slider-display").textContent = value + "x" + value;
+    document.getElementById("slider-display").textContent = value + " x " + value;
 }
 
-genGrid(16);
+
+// Set initial grid 
+genGrid(50);
+updateValue(50);
 
 // Change grid-square color on mouseover
 colorChangeEventListener("black");

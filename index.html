@@ -10,10 +10,12 @@
         </div>
         <button id="clear-grid" onclick="clearGrid()">Clear Grid</button>
         <div id="slide-container">
-            <input type="range" min="2" max="100" value="16" id="grid-slider" class="slider" onchange="updateValue(this.value);
-             clearGrid(); genGrid(this.value); colorChangeEventListener('black')">
+            <input type="range" min="2" max="100" value="50" id="grid-slider" class="slider" onchange="genGrid(this.value); 
+             clearGrid(); colorChangeEventListener('black')" onmousemove="updateValue(this.value)">
             <div id="slider-display"></div>
         </div>
+        <button id="sketch-color" onclick="colorChangeEventListener('black')">Choose Color</button>
+        <button id="eraser" onclick="colorChangeEventListener('white')">Eraser</button>
         <script src="script.js"></script>
     </body>
 </html>
