@@ -29,7 +29,7 @@ function colorChangeEventListener(color) {
     for(var i = 0, len = nodeList.length; i < len; i++) {
         nodeList[i].addEventListener(
             "mouseover", function(e) {
-                if(e.buttons == 1 || e.buttons == 3) {
+                if(e.buttons == 1) {
                     this.style.backgroundColor = color;
                 }
                 
@@ -73,6 +73,14 @@ function clearGrid() {
 // Updates display to match grid slider value 
 function updateValue(value) {
     document.getElementById("slider-display").textContent = value + " x " + value;
+}
+
+// Toggles gridlines 
+function toggleGridlines() {
+    var nodeList = document.querySelectorAll(".grid-square");
+    for(var i = 0, len = nodeList.length; i < len; i++) { 
+        nodeList[i].classList.toggle("no-border");
+    }
 }
 
 

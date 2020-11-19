@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 html, body {
     height: 100%;
     margin: 0;
@@ -6,8 +10,9 @@ html, body {
 #grid-container {
     display: flex;
     flex-direction: column;
-    width: 750px;
+    width: 500px;
     height: 500px;
+    border: 1px solid black;
 }
 
 #grid-container > div {
@@ -27,6 +32,10 @@ html, body {
 }
 
 .grid-square {
-    border: 1px solid rgb(225, 225, 225);
+     border: 1px solid rgb(225, 225, 225); 
+}
+
+.no-border {
+    border: none;
 }
 
