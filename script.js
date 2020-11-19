@@ -37,6 +37,13 @@ function clearGrid() {
     }
     var slideValue = document.getElementById("grid-slider").value;
     genGrid(slideValue);
+    colorValue = document.getElementById("color-picker").value;
+    if (colorValue != "rgb(0, 0, 0)") {
+        colorChangeEventListener(colorValue);
+    }
+    else {
+        colorChangeEventListener("rgb(0, 0, 0)");
+    }
 }
 
 // Updates display to match grid slider value 
@@ -49,5 +56,5 @@ function updateValue(value) {
 genGrid(50);
 updateValue(50);
 
-// Change grid-square color on mouseover
-colorChangeEventListener("black");
+// Set initial color to black 
+colorChangeEventListener("rgb(0, 0, 0)");

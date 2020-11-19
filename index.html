@@ -14,8 +14,13 @@
              clearGrid(); colorChangeEventListener('black')" onmousemove="updateValue(this.value)">
             <div id="slider-display"></div>
         </div>
-        <button id="sketch-color" onclick="colorChangeEventListener('black')">Choose Color</button>
+        <button id="black" onclick="colorChangeEventListener('black')">Black</button>
         <button id="eraser" onclick="colorChangeEventListener('white')">Eraser</button>
+        <div id ="color-picker-wrap">
+            <label for="color-picker">Choose Color</label>
+            <input type="color" id="color-picker" onchange="colorChangeEventListener(this.value)">
+        </div>
+       
         <script src="script.js"></script>
     </body>
 </html>
