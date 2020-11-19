@@ -12,6 +12,13 @@ function genGrid(x) {
             gridRow.appendChild(gridSquare);
         }
         container.appendChild(gridRow);
+    }
+    let colorValue = document.getElementById("color-picker").value;
+    if (colorValue != "rgb(0, 0, 0)") {
+        colorChangeEventListener(colorValue);
+    }
+    else {
+        colorChangeEventListener("rgb(0, 0, 0)");
     } 
 }
 
@@ -30,6 +37,23 @@ function colorChangeEventListener(color) {
     }
 }
 
+// Add random color change on mouseover 
+function randomColors() {
+    var nodeList = document.querySelectorAll(".grid-square");
+    for(var i = 0, len = nodeList.length; i < len; i++) {
+        let x = Math.floor(Math.random() * Math.floor(256));
+        let y = Math.floor(Math.random() * Math.floor(256));
+        let z = Math.floor(Math.random() * Math.floor(256));
+        nodeList[i].addEventListener(
+            "mouseover", function(e) {
+                if(e.buttons == 1 || e.buttons == 3) {
+                    this.style.backgroundColor = `rgb(${x},${y},${z})`;
+                }
+                
+            });
+    }
+}
+
 // Clears grid 
 function clearGrid() {
     while (container.firstChild) {
@@ -37,7 +61,7 @@ function clearGrid() {
     }
     var slideValue = document.getElementById("grid-slider").value;
     genGrid(slideValue);
-    colorValue = document.getElementById("color-picker").value;
+    let colorValue = document.getElementById("color-picker").value;
     if (colorValue != "rgb(0, 0, 0)") {
         colorChangeEventListener(colorValue);
     }
