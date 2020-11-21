@@ -1,6 +1,5 @@
 // Variables 
 const container = document.getElementById("grid-container");
-let pencil = false;
 
 // Generates grid of squares based on input number 
 function genGrid(x) {
@@ -21,7 +20,11 @@ function genGrid(x) {
     else {
         colorChangeEventListener("rgb(0, 0, 0)");
         colorValue = "rgb(0, 0, 0)";
-    } 
+    }
+    var nodeList = document.querySelectorAll(".grid-square");
+    for(var i = 0, len = nodeList.length; i < len; i++) {
+        nodeList[i].setAttribute("counter", 0);
+    }
 }
 
 
@@ -29,6 +32,7 @@ function genGrid(x) {
 function colorChangeEventListener(color) {
     var nodeList = document.querySelectorAll(".grid-square");
     for(var i = 0, len = nodeList.length; i < len; i++) {
+        nodeList[i].setAttribute("counter", 0);
         nodeList[i].addEventListener(
             "mouseover", function(e) {
                 if(e.buttons == 1) {
@@ -47,6 +51,7 @@ function randomColors() {
         let x = Math.floor(Math.random() * Math.floor(256));
         let y = Math.floor(Math.random() * Math.floor(256));
         let z = Math.floor(Math.random() * Math.floor(256));
+        nodeList[i].setAttribute("counter", 0);
         nodeList[i].addEventListener(
             "mouseover", function(e) {
                 if(e.buttons == 1) {
@@ -61,7 +66,6 @@ function randomColors() {
 function pencilShader() {
     var nodeList = document.querySelectorAll(".grid-square");
     for(var i = 0, len = nodeList.length; i < len; i++) {
-        nodeList[i].setAttribute("counter", 0);
         nodeList[i].addEventListener(
             "mouseover", function(e) {
                 if(e.buttons == 1) {
