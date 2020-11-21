@@ -1,5 +1,6 @@
-// Get container element 
+// Variables 
 const container = document.getElementById("grid-container");
+let pencil = false;
 
 // Generates grid of squares based on input number 
 function genGrid(x) {
@@ -46,13 +47,38 @@ function randomColors() {
         let z = Math.floor(Math.random() * Math.floor(256));
         nodeList[i].addEventListener(
             "mouseover", function(e) {
-                if(e.buttons == 1 || e.buttons == 3) {
+                if(e.buttons == 1) {
                     this.style.backgroundColor = `rgb(${x},${y},${z})`;
                 }
                 
             });
     }
 }
+
+// Pencil shading that goes from light grey to black after 10 passes
+function pencilShader() {
+    var nodeList = document.querySelectorAll(".grid-square");
+    for(var i = 0, len = nodeList.length; i < len; i++) {
+        nodeList[i].setAttribute("data-counter", 0);
+        nodeList[i].addEventListener(
+            "mousover", function(e) {
+                if(e.buttons == 1) {
+                    if(this.counter == 0) {
+                        this.style.backgroundColor = "rgb(0, 0, 0, 0.1)";
+                        this.counter += 0.1;
+                    }
+                    else if (this.counter <= 1) {
+                        this.style.backgroundColor = `rgb(0, 0, 0, ${this.counter})`;
+                        this.counter += 0.1;
+                    }
+                    else {
+                        return;
+                    }
+                }
+            });
+        }
+    }
+
 
 // Clears grid 
 function clearGrid() {
@@ -85,8 +111,8 @@ function toggleGridlines() {
 
 
 // Set initial grid 
-genGrid(50);
-updateValue(50);
+genGrid(36);
+updateValue(36);
 
 // Set initial color to black 
 colorChangeEventListener("rgb(0, 0, 0)");
