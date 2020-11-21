@@ -20,6 +20,7 @@ function genGrid(x) {
     }
     else {
         colorChangeEventListener("rgb(0, 0, 0)");
+        colorValue = "rgb(0, 0, 0)";
     } 
 }
 
@@ -36,6 +37,7 @@ function colorChangeEventListener(color) {
                 
             });
     }
+    document.getElementById("color-picker").value = color;
 }
 
 // Add random color change on mouseover 
@@ -59,20 +61,23 @@ function randomColors() {
 function pencilShader() {
     var nodeList = document.querySelectorAll(".grid-square");
     for(var i = 0, len = nodeList.length; i < len; i++) {
-        nodeList[i].setAttribute("data-counter", 0);
+        nodeList[i].setAttribute("counter", 0);
         nodeList[i].addEventListener(
-            "mousover", function(e) {
+            "mouseover", function(e) {
                 if(e.buttons == 1) {
-                    if(this.counter == 0) {
+                    var countValue = parseFloat(this.getAttribute("counter"));
+                    if(countValue == 0) {
                         this.style.backgroundColor = "rgb(0, 0, 0, 0.1)";
-                        this.counter += 0.1;
+                        let newCount = parseFloat(countValue) + 0.1;
+                        this.setAttribute("counter", newCount);
                     }
-                    else if (this.counter <= 1) {
-                        this.style.backgroundColor = `rgb(0, 0, 0, ${this.counter})`;
-                        this.counter += 0.1;
+                    else if (countValue < 1) {
+                        this.style.backgroundColor = `rgb(0, 0, 0, ${parseFloat(countValue)})`;
+                        let newCount = parseFloat(countValue) + 0.1;
+                        this.setAttribute("counter", newCount);
                     }
                     else {
-                        return;
+                        this.style.backgroundColor = "rgb(0, 0, 0, 1)";
                     }
                 }
             });
@@ -93,6 +98,7 @@ function clearGrid() {
     }
     else {
         colorChangeEventListener("rgb(0, 0, 0)");
+        document.getElementsById("color-picker").value = "rgb(0, 0, 0)";
     }
 }
 
