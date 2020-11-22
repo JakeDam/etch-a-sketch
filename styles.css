@@ -5,6 +5,39 @@
 html, body {
     height: 100%;
     margin: 0;
+    background-color: rgb(5, 5, 65);
+    color: lightskyblue;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 16px;
+}
+
+button {
+    background-color: rgb(5, 5, 65);
+    color: lightskyblue;
+    border-radius: 5px;
+    border: 1px solid lightskyblue;
+    height: 35px;
+    width: 150px;
+    outline: none;
+}
+
+button:hover {
+    background-color: lightskyblue;
+    color: rgb(5, 5, 65);
+    border: 1px solid rgb(5, 5, 65);
+}
+
+#content-wrapper {
+    display: flex;
+    height: 100%;
+    margin: 0;
+    justify-content: center;
+    gap: 100px;
+}
+
+#title-container {
+    position: absolute;
+    margin-top: 10px;
 }
 
 #grid-container {
@@ -12,15 +45,51 @@ html, body {
     flex-direction: column;
     width: 500px;
     height: 500px;
-    border: 1px solid black;
+    align-self: center;
+    background-color: white;
+    border: 10px solid lightskyblue;
 }
 
 #grid-container > div {
     flex: 1;
 }
 
+#controls-container {
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+#colors-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+
 #slide-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 100%;
+}
+
+#slider-display {
+    display: flex;
+    justify-content: center;
+}
+
+
+#colors-container {
+    display: flex;
+}
+
+#color-picker {
+    color: lightskyblue;
 }
 
 .grid-row {

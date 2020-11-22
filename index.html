@@ -6,23 +6,36 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <div id="grid-container"></div>
-        <div id="controls-container">
-            <button id="clear-grid" onclick="clearGrid()">Clear Grid</button>
-            <div id="slide-container">
-                <input type="range" min="2" max="72" value="36" id="grid-slider" class="slider" onchange="genGrid(this.value); 
-                clearGrid()" onmousemove="updateValue(this.value)">
-                <div id="slider-display"></div>
+        <div id="content-wrapper">
+            <div id="title-container">
+                <h1>ETCH-A-SKETCH</h1>  
             </div>
-            <button id="black" onclick="colorChangeEventListener('black')">Black</button>
-            <button id="eraser" onclick="colorChangeEventListener('white')">Eraser</button>
-            <div id ="color-picker-wrap">
-                <label for="color-picker">Choose Color</label>
-                <input type="color" id="color-picker" onchange="colorChangeEventListener(this.value)">
+            <div id="grid-container"></div>
+            <div id="controls-container">
+                <b>Controls</b>
+                <div id="colors-container">
+                    <button id="black" onclick="colorChangeEventListener('black')">Black</button>
+                    <button id="eraser" onclick="colorChangeEventListener('white')">Eraser</button>
+                    <div id ="color-picker-wrap">
+                        <label for="color-picker">Choose Color</label>
+                        <input type="color" id="color-picker" onchange="colorChangeEventListener(this.value)">
+                    </div>
+                    <button id="random" onclick="randomColors()">Random</button>
+                    <button id="pencil-shader" onclick="pencilShader()">Pencil Shader</button>
+                </div>
+                <div id="slide-container">
+                    Grid Size
+                    <input type="range" min="2" max="72" value="36" id="grid-slider" class="slider" onchange="genGrid(this.value); 
+                    clearGrid()" onmousemove="updateValue(this.value)">
+                    <div id="slider-display"></div>
+                </div>
+                <div id="toggle-grid-container">
+                    <button id="toggle-grid" onclick="toggleGridlines()">Toggle Gridlines</button>
+                </div>
+                <div id="clear-grid-container">
+                    <button id="clear-grid" onclick="clearGrid()">Clear Grid</button>
+                </div>
             </div>
-            <button id="random" onclick="randomColors()">Random</button>
-            <button id="pencil-shader" onclick="pencilShader()">Pencil Shader</button>
-            <button id="toggle-grid" onclick="toggleGridlines()">Toggle Gridlines</button>
         </div>
         <script src="script.js"></script>
     </body>
