@@ -21,6 +21,15 @@ button {
     outline: none;
 }
 
+h1 {
+    display: flex;
+}
+
+span {
+    display: flex;
+    padding-bottom: 25px;
+}
+
 button:hover {
     background-color: lightskyblue;
     color: rgb(5, 5, 65);
@@ -29,15 +38,22 @@ button:hover {
 
 #content-wrapper {
     display: flex;
+    flex-direction: column;
     height: 100%;
     margin: 0;
-    justify-content: center;
-    gap: 100px;
 }
 
 #title-container {
-    position: absolute;
-    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#body-container {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
 }
 
 #grid-container {
@@ -60,7 +76,7 @@ button:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 25px;
+    gap: 23px;
 }
 
 #colors-container {
