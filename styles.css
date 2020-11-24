@@ -87,7 +87,8 @@ button:hover {
 #colors-container {
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    justify-content: space-evenly;
+    height: 50%;
 }
 
 
@@ -102,11 +103,6 @@ button:hover {
 #slider-display {
     display: flex;
     justify-content: center;
-}
-
-
-#colors-container {
-    display: flex;
 }
 
 #color-picker {
