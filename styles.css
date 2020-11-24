@@ -84,14 +84,6 @@ button:hover {
     align-items: center;
 }
 
-#colors-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    height: 50%;
-}
-
-
 #slide-container {
     text-align: center;
     display: flex;
