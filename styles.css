@@ -7,7 +7,7 @@ html, body {
     margin: 0;
     background-color: rgb(5, 5, 65);
     color: lightskyblue;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: 'Exo 2', sans-serif;
     font-size: 16px;
 }
 
@@ -16,6 +16,7 @@ button {
     color: lightskyblue;
     border-radius: 5px;
     border: 1px solid lightskyblue;
+    font-family: 'Exo 2', sans-serif;
     height: 35px;
     width: 150px;
     outline: none;
@@ -59,8 +60,10 @@ button:hover {
 #grid-container {
     display: flex;
     flex-direction: column;
-    width: 500px;
-    height: 500px;
+    width: 35vw;
+    height: 70vh;
+    max-width: 500px;
+    max-height: 500px;
     align-self: center;
     background-color: white;
     border: 10px solid lightskyblue;
@@ -76,6 +79,8 @@ button:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 70vh;
+    max-height: 500px;
     gap: 23px;
 }
 
