@@ -54,6 +54,7 @@ button:hover {
 #body-container {
     display: flex;
     justify-content: center;
+    height: 70vh;
     gap: 100px;
 }
 
@@ -77,11 +78,11 @@ button:hover {
     display: flex;
     align-self: center;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     height: 70vh;
     max-height: 500px;
-    gap: 23px;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
 }
 
 #colors-container {
